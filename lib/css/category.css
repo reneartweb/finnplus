@@ -1,0 +1,155 @@
+
+/* Category */
+#categories {
+	font-size:0;
+	line-height:0;
+}
+
+#categories h2 {
+	margin:3rem 0 1rem;
+	line-height:1rem;
+	font-size:1.5rem;
+	display: inline-block;
+	width: 100%;
+}
+
+.category {
+	width:14.28%;
+	height:auto;
+	position:relative;
+	overflow:hidden;
+	height:139px;
+}
+
+.category a {
+	text-decoration:none;
+	text-align:center;
+	color:white;
+	font-size:1rem;
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+
+.category a:before {
+	content:"";
+	display:block;
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index:2;
+	   -moz-box-shadow:inset 0 0 30px rgba(0,0,0,0.9);
+	-webkit-box-shadow:inset 0 0 30px rgba(0,0,0,0.9);
+			box-shadow:inset 0 0 30px rgba(0,0,0,0.9);
+}
+
+.category-thumb {
+	display:block;
+	z-index:1;
+	overflow:hidden;
+	position:absolute;
+}
+
+.category-thumb,
+.category-thumb img {
+	min-width:100%;
+	height:140px;
+	text-align:center;
+}
+
+.category-thumb img {
+	margin:auto;
+	display:block;
+}
+
+.category-label {
+	-moz-box-shadow:inset 0 0 10px 0 #000;
+	-webkit-box-shadow:inset 0 0 10px 0 #000;
+	box-shadow:inset 0 0 10px 0 #000;
+
+
+	position:absolute;
+	top:33%;
+	left:0;
+	width:100%;
+	padding:11% 0;
+	z-index:5;
+	background-color:rgba(0,0,0,0.7);
+	line-height:1rem;
+	color:#fff;
+}
+
+.category-label:hover {
+	background-color:rgba(255, 48, 1, 0.7);
+	color:white;
+}
+
+.category,
+.sub-category {
+	font-size:1rem;
+	text-decoration:none;
+	color:white;
+	overflow:hidden;
+	float:left;
+	width:14.28%;
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sub-category {
+	height:45px;
+	text-align:center;
+	background-color:#0088ff;
+	width:162px;
+	margin:0 0 2px 2px;
+	display:table;
+}
+
+.sub-category span {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.sub-cat-active,
+.sub-category:hover {
+	background-color:#FF3001;
+	color:white !important;
+}
+
+#sub-category-container {
+	display:inline-block;
+	width:71%;
+}
+
+.category-back-btn {
+	background-color:#0088ff;
+	background-image:url(../images/elements/back.svg) !important;
+	background-repeat:no-repeat !important;
+	background-position:44% !important;
+	-o-background-size: 4rem !important;
+	-moz-background-size: 4rem !important;
+	-webkit-background-size: 4rem !important;
+	background-size:4rem !important;
+	width:14%;
+	margin-right:2px;
+	color:#0088ff;
+}
+#categories > div > a > span {
+	margin-top:50%;
+	position:relative;
+	top:43%;
+}
+
+.category-back-btn .category-label {
+	background:none;
+	-moz-box-shadow:inset 0 0 10px 0 transparent;
+	-webkit-box-shadow:inset 0 0 10px 0 transparent;
+	box-shadow:inset 0 0 10px 0 transparent;
+	font-size:7rem;
+}
+
+.category-back-btn:hover {
+	background-color:#FF3001;
+}

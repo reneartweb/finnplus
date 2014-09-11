@@ -1,0 +1,145 @@
+
+#top-ads > .container {
+	/*overflow: hidden;*/
+}
+
+#top-ads {
+	width: 100%;
+}
+.top-ad-container {
+	width:100%;
+	margin-bottom:20px;
+	/*float: left;*/
+	display: inline-block;
+	position: relative;
+	padding: 0;
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#top-ad-pages {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	float: left;
+	min-height: 13.4rem;
+}
+.top-ad-page {
+	position: absolute;
+	top: 0;
+	display: inline-block;
+	width: 100%;
+	/*overflow: hidden;*/
+	/*min-height: 15rem;*/
+}
+
+.top-ad-page .active {
+	border: 3px solid #0088ff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#top-ad-controls {
+	width: 100%;
+	float: left;
+	clear: both;
+	text-align: center;
+	margin: 1rem 0;
+}
+
+#top-ad-controls button{
+	display: inline-block;
+	background-color: #0088ff;
+	margin: 0 0.0625rem;
+  -ms-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+	transition: none;
+}
+
+#top-ad-control-left,
+#top-ad-control-right {
+	height: 1rem;
+	width: 1.5rem;
+	cursor: pointer;
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 8px solid transparent;	
+}
+
+#top-ad-control-left:hover,
+#top-ad-control-right:hover {
+	background-color:#FF3001;
+	border: 8px solid #FF3001;
+}
+
+#top-ad-control-left {
+	background-image: url(../images/elements/arrow_left.svg);
+}
+
+#top-ad-control-right {
+	background-image: url(../images/elements/arrow_right.svg);
+}
+
+.top-ad-item {
+	width: 25%;
+	float: left;
+	margin-right: 0%;
+	margin-bottom: 0%;
+	height: 6.7rem;
+	background-color: white !important;
+	overflow: hidden;
+  -ms-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+	transition: none;
+	text-align: left;
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+	font-size: 0;
+	border: 3px solid #d4e0ff;
+}
+
+.top-ad-item:hover {
+	border: 3px solid #0088ff;
+}
+.top-ad-item:nth-child(4n+4) {
+	margin-right: 0%;
+}
+
+.top-ad-item img {
+	width: 38%;
+	height: auto;
+}
+
+.top-ad-text {
+	width: 62%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.top-ad-item h4 {
+	font-size: 1rem;
+	line-height: 1.1rem;
+	margin: 0.7rem;
+	color: #0088ff;
+	font-weight: 500;
+
+}
+
+.top-ad-item p {
+	margin: 0;
+	margin-left: 0.7rem;
+	color: #000;
+}

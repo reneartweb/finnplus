@@ -1,0 +1,128 @@
+<?php 
+
+	// define('ALLOW_ACCESS', true); // allow access to this page
+	// defined('ALLOW_ACCESS') or die('Restricted access'); 	// Security to prevent direct access to php files.
+
+	// View Mode
+	if ( isset($_POST["view-mode"]) && !empty($_POST["view-mode"]) ) {
+		$view_mode = $_POST["view-mode"];
+	} else {
+		$view_mode = "gallery";
+	}
+
+	if ( isset($_POST["sort"]) && !empty($_POST["sort"]) ) {
+		$sort = $_POST["sort"];
+	} else {
+		$sort = "id DESC";
+	}
+
+	if ( isset($_POST["page"]) && !empty($_POST["page"]) ) {
+		$page = (int) $_POST["page"];
+		$page--;
+	} else {
+		$page = 0;
+	}
+
+
+	if ( isset($_GET["sub_cat_id"]) && !empty($_GET["sub_cat_id"]) ) {
+		$subCatID = (int) $_GET["sub_cat_id"];
+	} else if ( isset($_POST["sub_cat_id"]) && !empty($_POST["sub_cat_id"]) ) {
+		$subCatID = (int) $_POST["sub_cat_id"];
+	} else {
+		$subCatID = "%";
+	}
+
+
+	// Show
+	if ( isset($_POST["show"]) && !empty($_POST["show"]) ) {
+		$show = $_POST["show"];
+	} else {
+		$show = 20;
+	}
+
+	$offset = $show * $page;
+
+	// die("die");
+
+	$error = null;
+	try {
+		spl_autoload_register(function ($class) { require_once "../classes/".$class.".class.php"; });
+		
+		$db = new Database;
+		$db->query('SELECT name FROM categories_sub WHERE id = :subCatID LIMIT 1');
+		$db->bind(':subCatID', $subCatID);
+		$category = $db->single();
+		
+		$db->query('SELECT count(id) as total FROM products_view WHERE status = "published" AND sub_category_id LIKE :subCatID  AND status = "published"');
+		$db->bind(':subCatID', $subCatID);
+		$count = $db->single();
+
+		$statement = 'SELECT id, title, city_name, zip, price, currency, date_created, sub_category FROM products_view WHERE sub_category_id LIKE :subCatID AND status = "published" ORDER BY '.$sort.' LIMIT '.$show.' OFFSET '.$offset;
+		$db->query($statement);
+		$db->bind(':subCatID', $subCatID);
+		$products = $db->fetchAll();
+
+	} catch (Exception $e) {
+		$error = $e->getMessage();
+	}
+
+?>
+<?php if ($error): ?>
+	<h2><?php echo $error ?></h2>
+<?php endif ?>
+<h2 class="results-list-title">Found <?php echo $count["total"]; ?> <?php echo ($category) ? $category["name"] : "Latest Advertisments" ; ?></h2>
+<?php if ($products): ?>
+	<div class="<?php echo ($view_mode == "gallery") ? "gallery-view" : "list-view" ; ?>">
+	<?php foreach ($products as $p) { 
+
+		$db->query('SELECT uuid FROM product_images WHERE product_id = :product_id ORDER BY id ASC LIMIT 1 ');
+		$db->bind(':product_id', $p["id"]);
+		$product_image = $db->single();
+
+		?>
+			<a href="" class="ad" data-id="<?php echo $p["id"]; ?>">
+				<figure>
+					<img class="ad-img" src="lib/images/uploads/small/<?php echo $product_image["uuid"]; ?>" alt="<?php echo $p["title"]; ?> thumbnail image">
+				</figure>
+				<h4><?php echo $p["id"]." ".$p["title"]; ?></h4>
+				<table>
+					<tbody>
+						<?php if ($subCatID == "%"): ?>
+							<tr>
+								<td>Category:</td>
+								<td><?php echo $p["sub_category"]; ?></td>
+							</tr>
+						<?php endif ?>
+						<tr>
+							<td>Location:</td>
+							<td><?php echo $p["city_name"]; ?> (<?php echo $p["zip"]; ?>)</td>
+						</tr>
+						<tr>
+							<td>Created: </td>
+							<td><?php echo strftime("%d. %B %Y", strtotime( $p["date_created"] )); ?></td>
+						</tr>
+					</tbody>
+				</table>
+				<footer>
+					<p class="price"><?php echo $p["price"]; ?> <?php echo $p["currency"]; ?></p>
+					<div class="compare-icon">&#9733;</div>
+				</footer>
+			</a>
+	<?php } ?>
+	</div>
+
+	<?php if ($count["total"] > $show): ?>
+		<?php $total = ceil($count["total"] / $show); ?>
+		<section id="pager">
+			<a href="" class="btn prev-page">&#9664; Prev</a>
+			<select name="page" class="btn select-arrow" >
+				<?php for ($i=0; $i < $total; $i++) { ?>
+					<option value="<?php echo $i+1; ?>" <?php echo ($page == $i) ? "selected" : ""; ?>>Page <?php echo $i+1; ?> of <?php echo $total; ?></option>
+				<?php } ?>
+			</select>
+			<input type="hidden" id="total-pages" value="<?php echo $total; ?>">
+			<a href="" class="btn next-page">Next &#9654;</a>
+		</section>
+	<?php endif ?>
+	<script src="lib/js/results-list.js"></script>
+<?php endif ?>

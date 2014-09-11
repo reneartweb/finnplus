@@ -1,0 +1,228 @@
+#advertisment-space {
+	width:100%;
+	height:150px;
+	background-color:grey;
+	margin-bottom:20px;
+}
+
+
+/* advert-intro */
+
+#advert-intro {
+	background-color:#272d3a;
+	color:#fff;
+}
+
+#advert-intro h2 {
+	font-size:5rem;
+	font-weight:300;
+}
+
+#advert-intro h3 {
+	font-size:2rem;
+	font-weight:300;
+}
+
+
+
+/* advert-header */
+
+
+#advert-header {
+	background-color:#fff;
+}
+
+#advert-header h2 {
+	font-size:2rem;
+	color:#255480;
+}
+
+.create-step-wrap {
+	text-align:justify;
+	padding-bottom: 2rem;
+	position:relative;
+}
+.create-step {
+	text-align:center;
+	display:inline-block;
+	width:33%;
+}
+
+#create-step-frame {
+	left:6%;
+	width:20%;
+	height:18rem;
+	position:absolute;
+	border:1px solid #255480;
+		 -ms-transition:left 1s ease;
+		  -o-transition:left 1s ease;
+		-moz-transition:left 1s ease;
+	 -webkit-transition:left 1s ease;
+			 transition:left 1s ease;
+}
+
+#create-step-line {
+	width:66%;
+	position:absolute;
+	margin:0 auto;
+	border-bottom:1px solid #255480;
+	top:4.9rem;
+	left:17%;
+}
+
+.create-step > p {
+	margin:1.4rem 0 0.7rem;
+	color:#255480;
+}
+
+.step-number {
+	background-color:#fff;/*#255480; <- active*/
+	padding:1.5rem 1.6rem 1.5rem 1.4rem;
+	border-radius:100%;
+	width:1rem;
+	display:inline-block;
+	color:#255480;
+	font-size:2rem;
+	position:relative;
+	margin-bottom:7.4rem;
+	-moz-box-shadow: 0 0 0 0.15rem #255480;
+	-webkit-box-shadow: 0 0 0 0.15rem #255480;
+	box-shadow:inset 0 0 0 0.15rem #255480;
+}
+
+.step-number:after {
+	content:" ";
+	display:block;
+	position:absolute;
+	width:12rem;
+	height:5rem;
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+	left:-100%;
+	top:140%;
+	background-position:center;
+}
+
+#create-merhandise .step-number:after {
+	background-image:url(../images/elements/symbol_box_a.svg);
+}
+
+#create-validate .step-number:after {
+	background-image:url(../images/elements/symbol_box_b.svg);
+}
+
+#create-release .step-number:after {
+	background-image:url(../images/elements/symbol_box_c.svg);
+	left:-110%;
+}
+
+.step-active {
+	background-color:#255480;
+	color:#fff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow:none;
+}
+
+.create-step > h3 {
+	color:#255480;
+	font-size:1.3rem;
+}
+
+#advert-header > div > p {
+	margin-top:2rem;
+	color:#255480;
+}
+
+/* advert-create */
+#create-sub-cat ul label a,
+#create-main-cat ul label a {
+	display:block;
+	background-color:#d4e0ff;
+	margin:4px 0;
+	margin-right:20px;
+	padding:10px;
+	text-align:left;
+	color:#272d3a;
+	-ms-transition:none;
+	-o-transition:none;
+	-moz-transition:none;
+	-webkit-transition:none;
+	transition:none;
+}
+
+#create-sub-cat ul label a:hover,
+#create-main-cat ul label a:hover {
+	color:#fff !important;
+	cursor:pointer;
+	background-color:#0088ff ;
+}
+
+#create-sub-cat ul label a:after,
+#create-main-cat ul label a:after {
+	/* http://unicode-table.com/en/25B6/ */
+	/* http://www.evotech.net/articles/testjsentities.html */
+	content:"\25B6";
+	float:right;
+	color:grey;
+}
+
+.radio-switch input[type="radio"] {
+	display:none;
+}
+
+.radio-switch input[type="radio"]:checked + label>a,
+.radio-switch input[type="radio"]:checked + label>a:hover {
+	background-color:rgb(255, 48, 1) !important;
+	color:white !important;
+}
+
+.radio-switch input[type="radio"]:checked + label>a:after {
+	color:white !important;
+}
+
+#advert-create {
+	background-color:#fff;
+	padding-bottom:1rem;
+}
+
+#create-form h3 {
+	font-size:1.3rem;
+	color:#255480;
+}
+
+#advert-create .third {
+	padding-right:1rem;
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#advert-create .third:nth-child(3n) {
+	padding-right:0;
+}
+
+.form-element:last-child {
+	clear:both;
+}
+
+/* if step-1a continue btn is clicked, then make next step visible */
+#step-1a-checkbox:checked + div + input + div {
+	display:inline-block;
+}
+
+.checkbox-toggle:checked + div {
+	display:none !important;
+}
+
+#results-list h2 {
+	font-size: 1.5rem;
+}
+
+#pager select {
+	margin: 0 5px;
+}

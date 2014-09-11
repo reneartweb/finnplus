@@ -1,0 +1,258 @@
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+
+/* top navigation bar*/
+#topnav {
+	background-color: #272d3a;
+	line-height: 0;
+}
+
+#results .container {
+	overflow: visible;
+}
+
+#topnav a,
+#topnav .link {
+	color: #fff;
+	display: inline-block;
+	padding: 1rem 0;
+}
+
+#topnav .left a, #user-menus a {
+	margin-right: 1rem;
+}
+
+#topnav a: nth-child(n+2): before,
+#topnav .link: before {
+	content: "|";
+	color: #fff;
+	display: inline-block;
+	padding: 0 0.5rem;
+}
+
+#topnav .dropdown {
+	min-width: 1rem;
+	padding-right: 1.5rem;
+}
+
+#topnav .dropdown-btn {
+	width: auto;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	color: white;
+}
+
+#topnav .dropdown-btn: after {
+	display: none;
+	background: none !important;
+}
+
+#topnav .dropdown ul {
+	left: .8rem;
+	text-align: left;
+	top: 48px;
+}
+
+#topnav .dropdown a {
+	padding: .4rem;
+	background: #fff;
+	color: #272d3a;
+}
+
+#topnav .dropdown a: hover {
+	background: #0088ff;
+	color: #fff !important;
+}
+
+#topnav .dropdown a 
+{
+	-ms-transition: all 0 ease;
+	-o-transition: all 0 ease;
+	-moz-transition: all 0 ease;
+	-webkit-transition: all 0 ease;
+	transition: all 0 ease;
+
+}
+
+#topnav > .container > .wrap > div {
+	font-size: 0;
+}
+
+#finnplus-adbutton {
+	display: inline-block;
+	margin-left: 1rem;
+}
+
+#finnplus-adbutton a {
+	padding: 1rem 0 ;
+	color: #fff !important;
+}
+
+#search-btn,
+#finnplus-adbutton a,
+#login-form input[type="submit"] {
+	width: 7rem;
+}
+
+/*header*/
+
+#header {
+	background-color: #fff;
+}
+
+#header > .container > .wrap > div {
+	vertical-align: top;
+}
+
+#logo {
+	text-align: left;
+}
+
+#logo img {
+	width: 13rem;
+	max-width: 100%;
+	height: auto;
+	margin: 2.5rem 0 1.5rem;
+}
+
+
+#header > div > div > div.two-third.column {
+	float: right;
+}
+
+#search-form {
+	font-size: 0;
+	margin: 3rem 0;
+	position: relative;
+	text-align: right;
+	width: 100%;
+}
+
+#search-form input[type="text"] {
+	padding: 1rem;
+	background-color: #d4e0ff;
+	border: 0;
+	outline: none;
+	line-height: 1rem;
+	padding: 1rem;
+	width: 23rem;
+	max-width: 56%;
+	vertical-align: top;
+}
+
+#search-cat-select {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));
+	filter: alpha(opacity=0);
+	-khtml-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+	background: #fff;
+	color: #000;
+}
+
+#search-cat-select:hover {
+	color: #000;
+}
+
+#search-cat-span {
+	min-width: 7rem;
+	max-width: 15rem;
+}
+
+#search-btn {
+	padding: 1rem;
+	line-height: 1rem;
+	font-size: 1rem;
+	vertical-align: top;
+}
+
+/* Login */
+#login {
+	text-align: right;
+	padding: 1rem 0;
+}
+
+#login-form {
+	display: inline-block;
+}
+
+/* Modal */
+
+.modal {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+}
+
+.modal .wrap {
+	position: relative;
+	background: #d4e0ff;
+	max-width: 400px;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 5px 15px 5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 5px 15px 5px rgba(0,0,0,0.5);
+	box-shadow: 0 5px 15px 5px rgba(0,0,0,0.5);
+	top: 70px;
+}
+
+.modal header,
+.modal footer,
+.modal-content {
+	padding: 1rem;
+}
+
+.modal footer {
+	text-align: right;
+}
+
+.modal-content {
+	background: white;
+}
+
+.modal header h2 {
+	padding: 0;
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.close-modal-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*
+#register-form {
+	text-align: right;
+}
+
+#register-form label,
+#register-form input {
+	width: 32%;
+	display: inline-block;
+	margin: 0;
+}
+
+#register-form input {
+	width: 64%;
+	margin-bottom: 10px;
+}*/
+
+.register-type-block .btn {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 49%;
+  margin-bottom: 1rem;	
+}

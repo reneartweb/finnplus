@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Buttons and Links
+   ========================================================================== */
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"] {
+  
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border:none;
+	background-color:#0088ff;
+	padding:1rem;
+	height:3rem;
+	color:white;
+	text-align:center;
+	display:inline-block;
+  	-moz-border-radius: 0;
+  	-webkit-border-radius: 0;
+  	border-radius: 0;
+	-moz-appearance:none;
+	-webkit-appearance:none; /*Removes default chrome and safari style*/	
+	cursor:pointer;
+}
+
+.btn-slim {
+	height:auto;
+	padding:0.4rem 1rem;
+	font-family:'Lato', sans-serif;
+	font-weight:300;
+}
+
+a,
+.link {
+	color:#0088ff;
+	text-decoration:none;
+	text-align:center;
+	background:none;
+	cursor:pointer;
+}
+
+#show-select :first-child:after /* adding content to select works only on firefox */
+ {
+	/*content:" \25BC";/* arrow down */
+}
+
+.btn-img {
+	padding:0.66rem;
+}
+
+#sort-by-label {
+	margin-right:0 !important;
+	cursor:default;
+	padding:1rem;
+}
+
+/* Hovering */
+a:hover,
+.link:hover {
+	color:rgb(255, 48, 1) !important;
+	background:none;
+}
+
+.btn-active,
+.btn:hover,
+.btn-hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+	color:white !important;
+	background-color:rgb(255, 48, 1);
+}
+
+/* Animation */
+a,
+.btn,
+.link,
+button,
+.category-label,
+input[type="button"],
+input[type="submit"] {
+	-ms-transition:background-color 400ms ease, color 400ms ease;
+	-o-transition:background-color 400ms ease, color 400ms ease;
+	-moz-transition:background-color 400ms ease, color 400ms ease;
+	-webkit-transition:background-color 400ms ease, color 400ms ease;
+	transition:background-color 400ms ease, color 400ms ease;
+}
+
+/* Focus */
+.btn:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+	outline:none;
+}
+
+/* Active */
+a:active,
+.btn:active,
+.link:active,
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(70));
+	filter: alpha(opacity=70);
+	-khtml-opacity: 0.7;
+	-moz-opacity: 0.7;  	
+	opacity: 0.7;/* change the opacity when a link or button is being clicked */
+}

@@ -1,0 +1,109 @@
+#sticky-top {
+	background-color:#fff;
+	height:2.5rem;
+	-moz-box-shadow:0 0 1.5rem rgba(0,0,0,0.7);
+	-webkit-box-shadow:0 0 1.5rem rgba(0,0,0,0.7);
+	box-shadow:0 0 1.5rem rgba(0,0,0,0.7);
+	position:fixed;
+	z-index:3000;
+	display:none;
+}
+
+#sticky-top:hover {
+	-moz-box-shadow:0 0 1.5rem rgba(0,0,0,0.9);
+	-webkit-box-shadow:0 0 1.5rem rgba(0,0,0,0.9);
+	box-shadow:0 0 1.5rem rgba(0,0,0,0.9);
+}
+
+#sticky-top .container {
+	text-align:justify;
+	height:2.5rem;
+}
+
+#sticky-top .container a {
+	display:inline-block;
+}
+#sticky-top .container > div {
+	vertical-align:top;
+}
+#sticky-top .container:after{
+	content:"";
+	display:inline-block;
+	width:100%;
+	height:0;
+	background-color:red;
+}
+
+#sticky-top img {
+	height:1.8rem;
+	margin:0.35rem 2rem 0.35rem 0;
+}
+
+#sticky-top form {
+	display:inline-block;
+	vertical-align:top;
+	width:6rem;
+	position:relative;
+}
+#sticky-top a:nth-child(n+2) {
+	vertical-align:middle;
+	margin-left:1rem;
+}
+
+#sticky-top input {
+	height:2.5rem;
+	width:100%;
+	outline:none;
+	margin:0;
+	vertical-align:top;
+	background-color:#d4e0ff;
+	padding:0 1rem;
+	border:none;
+	color:#0088ff;
+  
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+#sticky-top input::-webkit-input-placeholder {
+   color:#fff;
+}
+
+#sticky-top input:-moz-placeholder { /* Firefox 18- */
+   color:#fff; 
+}
+
+#sticky-top input::-moz-placeholder {  /* Firefox 19+ */
+   color:#fff; 
+}
+
+#sticky-top input:-ms-input-placeholder {  
+   color:#fff; 
+}
+
+#sticky-top input:focus+button {
+	background-image:url(../images/elements/search_blue.svg);
+}
+
+#top-seach-btn {
+	height:1rem;
+	width:1rem;
+	margin:0.75rem 0;
+	position:absolute;
+	top:0;
+	right:0.75rem;
+	padding:0;
+	background-color:transparent;
+	background-image:url(../images/elements/search.svg);
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
+	background-size:contain;
+}
+
+#create-ad-btn {
+	padding:0.75rem;
+	height:2.5rem;
+}
